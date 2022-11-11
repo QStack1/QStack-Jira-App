@@ -1,0 +1,11 @@
+modules:
+  jira:issuePanel:
+    - key: qstack-hello-world-panel
+      function: main
+      title: QStack
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: main
+      handler: index.run
+app:
+  id: ari:cloud:ecosystem::app/e27bed8b-8de1-4f77-84bb-f76ad982409b
