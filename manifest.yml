@@ -1,3 +1,7 @@
+permissions:
+  scopes:
+    - 'write:jira-work'
+    - 'read:jira-work'
 modules:
   jira:issuePanel:
     - key: qstack-hello-world-panel
@@ -6,6 +10,10 @@ modules:
       icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
   function:
     - key: main
-      handler: index.run
+      handler: index.runChecks
+    # - key: edit
+    #   handler: index.runEdit
+    # - key: view
+    #   handler: index.runView
 app:
   id: ari:cloud:ecosystem::app/e27bed8b-8de1-4f77-84bb-f76ad982409b
