@@ -2,7 +2,14 @@ permissions:
   scopes:
     - 'write:jira-work'
     - 'read:jira-work'
+    - 'read:jira-user'
+    - 'manage:jira-configuration'
 modules:
+  jira:workflowValidator:
+      - key: qstack-validator
+        function: validate
+        name: qstack-validator
+        description: A Jira workflow validator example.
   jira:issuePanel:
     - key: qstack-hello-world-panel
       function: main
@@ -11,8 +18,8 @@ modules:
   function:
     - key: main
       handler: index.runChecks
-    # - key: edit
-    #   handler: index.runEdit
+    - key: validate
+      handler: index.runValidator
     # - key: view
     #   handler: index.runView
 app:
