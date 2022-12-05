@@ -3,7 +3,11 @@ permissions:
     - 'write:jira-work'
     - 'read:jira-work'
     - 'read:jira-user'
-    - 'manage:jira-configuration'
+    - 'read:issue:jira'
+    - 'read:issue-details:jira'
+  content:
+    styles:
+      - 'unsafe-inline'
 modules:
   jira:workflowValidator:
       - key: qstack-validator
@@ -13,6 +17,10 @@ modules:
   jira:issuePanel:
     - key: qstack-hello-world-panel
       function: main
+      title: Checks
+      icon: https://lh3.googleusercontent.com/ogw/AOh-ky3nicY-W3zfAiuY8AX30-p0KSPuEp-lvVnO21uC-Qk=s64-c-mo
+    - key: qstack-main-panel
+      function: bestsrc
       title: QStack
       icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
   function:
@@ -20,6 +28,8 @@ modules:
       handler: index.runChecks
     - key: validate
       handler: index.runValidator
+    - key: bestsrc
+      handler: index.runBestSrc
     # - key: view
     #   handler: index.runView
 app:

@@ -34,3 +34,24 @@ import ForgeUI, { useAction, Fragment,
 //     </IssuePanel>
 //   );
   
+// more scraps
+/* <Button
+text={`Your size is ${size}. Click to change.`}
+onClick={() => setOpen(true)}
+/>
+{isOpen && (
+<ModalDialog header="My modal dialog" onClose={() => setOpen(false)}>
+    <Form
+        onSubmit={data => {
+        setSize(data.size);
+        setOpen(false);
+        }}
+    >
+        <Select label="T-shirt size" name="size">
+            <Option label="Small" value="small" />
+            <Option label="Medium" value="medium" />
+            <Option label="Large" value="large" />
+        </Select>
+    </Form>
+</ModalDialog>
+)} */
