@@ -1,11 +1,18 @@
-import ForgeUI, { render, IssuePanel } from '@forge/ui';
+import ForgeUI, { render, IssuePanel, IssueGlance, Text } from '@forge/ui';
 import api, { route } from '@forge/api';
 import { Checks } from "./components/checkBoxes/CheckBoxes";
+import { BestResource } from "./components/bestSrc/BestSrc";
 
 export const runChecks = render(
-    <IssuePanel>
-      <Checks />
-    </IssuePanel>);
+  <IssuePanel>
+    <Checks />
+  </IssuePanel>);
+
+export const runBestSrc = render(
+  <IssuePanel>
+    <BestResource />
+  </IssuePanel>
+)
 
 export const runValidator = async ({ issue, transition: { from, to } }) => {
   const response = await api.asApp().requestJira(route `/rest/api/3/issue/${issue.key}`);
@@ -32,7 +39,7 @@ export const runValidator = async ({ issue, transition: { from, to } }) => {
     "visibility": "public",
     "isEnabled": true,
     "isDismissible": false,
-    "message": "This is a public, enabled, non-dismissible banner, set using the API.  Configured by QStack."
+    "message": "This is a public, enabled, non-dismissible banner, set using the API.  Configured by QStack.  v1.0.4"
   }`;
   
 
